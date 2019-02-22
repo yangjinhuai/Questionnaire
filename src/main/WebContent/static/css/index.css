@@ -1,0 +1,194 @@
+@charset "utf-8";
+
+/*顶部导航B*/
+.head {
+	width: 100%;
+	height: 77px;
+	background: #2A94DE;
+	padding-left: 15px;
+	padding-top: 3px;
+	color: #fff;
+}
+
+.head a {
+	color: #fff;
+}
+
+.headlogo {
+	width: 350px;
+	height: 79px;
+	line-height: 80px;
+	text-align: center;
+	background: url(../images/logo.png) no-repeat;
+	background-size: 200px;
+	margin-top: 10px;
+}
+
+.headlogo2 {
+	width: 515px;
+	height: 79px;
+	line-height: 80px;
+	text-align: center;
+	background: url(../images/logo2.png) no-repeat;
+	background-size: 480px;
+	margin-left: 160px;
+    margin-top: 18px;
+}
+
+.headlink {
+	margin: 30px 20px 0 0;
+}
+
+.headlink li {
+	float: left;
+	margin-left: 5px;
+}
+.headlink li #hellow{
+	padding-left: 25px;
+}
+
+.headlink li a {
+	padding-left: 20px;
+	background: url(../images/main_link_ico.png) no-repeat;
+}
+
+.headlink li#link_0 a {
+	background-position: 0 0;
+}
+
+.headlink li#link_1 a {
+	background-position: 0 -150px;
+}
+
+.headlink li#link_2 a {
+	background-position: 0 -50px;
+}
+
+.headlink li#link_3 a {
+	background-position: 0 -190px;
+}
+
+.headlink li#link_4 a {
+	background-position: 0 -100px;
+}
+/*顶部导航E*/
+
+/*左侧导航B*/
+.leftmenu {
+	width: 187px;
+	position: absolute;
+	top: 80px;
+	left: 0;
+	bottom: 0;
+	z-index: 99;
+	background-color: #2A94DE;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.leftmenu dl dt {
+	width: 187px;
+	height: 32px;
+	line-height: 32px;
+	text-indent: 20px;
+	font-weight: bold;
+	color: #fff;
+	font-size: 14px;
+	background: #2A94DE url(../images/ico_small.png) right 12px no-repeat;
+	cursor: pointer;
+}
+
+.leftmenu dl dt span {
+	display: inline-block;
+	float: left;
+	height: 32px;
+}
+
+.leftmenu dl dt .bg_weijuanguanli /*问卷管理*/ {
+	width: 32px;
+	margin-left: 20px;
+	background: url("../images/leftmenu_wenjuanguanli.png") no-repeat;
+	background-size: 25px;
+	background-position: center;
+}
+
+.leftmenu dl dt .text_weijuanguanli {
+	width: 77px;
+	text-indent: 5px;
+}
+
+.leftmenu dl dt .bg_shujuguanli /*数据管理*/ {
+	width: 32px;
+	margin-left: 20px;
+	background: url("../images/leftmenu_shujuguanli.png") no-repeat;
+	background-size: 25px;
+	background-position: center;
+}
+
+.leftmenu dl dt .text_shujuguanli {
+	width: 77px;
+	text-indent: 5px;
+}
+
+.leftmenu dl dt .bg_shujukeshihua /*数据可视化*/ {
+	width: 32px;
+	margin-left: 20px;
+	background: url("../images/leftmenu_shujukeshihua.png") no-repeat;
+	background-size: 24px;
+	background-position: center;
+}
+
+.leftmenu dl dt .text_shujukeshihua {
+	width: 77px;
+	text-indent: 5px;
+}
+
+.leftmenu dl dt .bg_xitongguanli /*系统管理*/ {
+	width: 32px;
+	margin-left: 20px;
+	background: url("../images/leftmenu_guanliyuan.png") no-repeat;
+	background-size: 24px;
+	background-position: center;
+}
+
+.leftmenu dl dt .text_xitongguanli {
+	width: 77px;
+	text-indent: 5px;
+}
+
+.leftmenu dl dd ul li {
+	width: 187px;
+	float: right;
+	height: 35px;
+	line-height: 26px;
+	text-indent: 30px;
+}
+
+.leftmenu dl dd ul {
+	padding: 5px 0;
+	background-color: #4DA0D5;
+}
+
+.leftmenu dl dd ul li a {
+	width: 165px;
+	height: 35px;
+	line-height: 24px;
+	display: block;
+	color: #ffffff;
+	padding-left: 20px;
+}
+
+.leftmenu dl dd ul li span {
+	display: inline-block;
+	width: 100px;
+	height: 35px;
+	background: url("../images/leftmenu_xuanxiang.png") no-repeat;
+	padding-left: 5px;
+	background-size: 23px;
+	margin-top: 5px;
+}
+
+.leftmenu dl dd ul li:hover {
+	background-color: #5D8AB3;
+}
+/*左侧导航E*/

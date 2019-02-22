@@ -1,0 +1,101 @@
+@CHARSET "UTF-8";
+#form_design .preview-container, #form_real_preview_container 
+{
+	background-position: top center;
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1440px) 
+{
+	#form_design .preview-container, #form_real_preview_container 
+	{
+		background-position: top center;
+		background-attachment: fixed;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) 
+{
+	#form_design .preview-container, #form_real_preview_container 
+	{
+		background-position: top center;
+		background-attachment: fixed;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+}
+
+@media screen and (max-width: 480px) 
+{
+	#form_design .preview-container, #form_real_preview_container 
+	{
+		background-position: top center;
+		background-attachment: fixed;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+}
+</style>
+
+<style type="text/css">
+#form_design .preview-container .center 
+{
+	max-width: 700px;
+}
+
+#form_design .preview-container>.preview 
+{
+	background-color: #FFF;
+	max-width: 700px;
+	border-width: 0;
+	border-color: #AAB2BD;
+}
+
+#form_design .preview-container>.preview>.banner 
+{
+	background-color: rgb(255, 133, 0);
+	color: rgb(255, 255, 255);
+}
+
+#form_design .preview-container>.preview>.form-header .form-title
+ {
+	font-size: 1.833em;
+	font-weight: normal;
+	color: #000;
+}
+
+#form_design .preview-container>.preview .fields .field 
+{
+	
+}
+
+#form_design .preview-container>.preview .fields .field .field-label 
+{
+	font-size: 1.167em;
+	font-weight: bold;
+	color: #333;
+}
+
+#form_design .preview-container>.preview .fields .field .choices label,
+	#form_design .preview-container>.preview .fields .field .likert thead th,
+	#form_design .preview-container>.preview .fields .field .matrix thead th,
+	#form_design .preview-container>.preview .fields .field .goods-items .name
+	{
+	
+    }
+
+#form_design .preview-container>.preview .submit-field 
+{
+	text-align: center;
+}
+
+.preview .submit-field .gd-btn 
+{
+	background-color: rgb(255, 133, 0);
+	color: rgb(255, 255, 255);
+	border-color: rgb(255, 255, 255);
+}

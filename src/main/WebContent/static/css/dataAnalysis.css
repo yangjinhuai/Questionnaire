@@ -1,0 +1,149 @@
+@charset "UTF-8";
+
+.row2 .formlist {
+	width: 1120px;
+	height: 400px;
+	margin-top: 0px;
+	padding-top: 20px;
+	padding-right: 100px;
+	padding-left: 145px;
+	border-radius: 2px;
+	background-color: #fff;
+}
+
+.row2 .formlist .form-item-wrapper {
+	width: 136px;
+	height: 165px;
+	background-color: #FFFFFF;
+	border-radius: 2px;
+	border: 1px solid #C3C9D0;
+	padding: 10px;
+	margin: 0px 30px 20px 30px;
+	position: relative;
+}
+
+.row2 .formlist .form-item-wrapper p {
+	display: block;
+	width: 125px;
+	height: 40px;
+	overflow: hidden;
+	word-wrap: break-word;
+}
+
+.row2 .formlist .form-item-wrapper .form-data {
+	font-size: 12px;
+	position: absolute;
+	bottom: 7px;
+	left: 10px;
+}
+
+.row2 .formlist .form-item-wrapper .bg1 {
+	height: 35px;
+	width: 35px;
+	background: url(../images/dataAnalysis/icon1.png) no-repeat;
+	background-size: 32px 32px;
+	position: absolute;
+	bottom: 70px;
+	left: 55px;
+}
+
+.row2 .formlist .form-item-wrapper .bg2 {
+	height: 35px;
+	width: 35px;
+	background: url(../images/dataAnalysis/icon2.png) no-repeat;
+	background-size: 32px 32px;
+	position: absolute;
+	bottom: 70px;
+	left: 55px;
+}
+
+.row2 .formlist .form-item-wrapper .bg3 {
+	height: 35px;
+	width: 35px;
+	background: url(../images/dataAnalysis/icon3.png) no-repeat;
+	background-size: 32px 32px;
+	position: absolute;
+	bottom: 70px;
+	left: 55px;
+}
+
+.row2 .formlist .form-item-wrapper .bg4 {
+	height: 35px;
+	width: 35px;
+	background: url(../images/dataAnalysis/icon4.png) no-repeat;
+	background-size: 32px 32px;
+	position: absolute;
+	bottom: 70px;
+	left: 55px;
+}
+
+.row2 .formlist .form-item-wrapper .bg5 {
+	height: 35px;
+	width: 35px;
+	background: url(../images/dataAnalysis/icon5.png) no-repeat;
+	background-size: 32px 32px;
+	position: absolute;
+	bottom: 70px;
+	left: 55px;
+}
+
+.row2 .formlist .form-item-wrapper .bg6 {
+	height: 35px;
+	width: 35px;
+	background: url(../images/dataAnalysis/icon6.png) no-repeat;
+	background-size: 32px 32px;
+	position: absolute;
+	bottom: 70px;
+	left: 55px;
+}
+
+.row2 .formlist .form-item-wrapper .bg7 {
+	height: 35px;
+	width: 35px;
+	background: url(../images/dataAnalysis/icon7.png) no-repeat;
+	background-size: 32px 32px;
+	position: absolute;
+	bottom: 70px;
+	left: 55px;
+}
+
+.row2 .formlist .form-item-wrapper .bg8 {
+	height: 35px;
+	width: 35px;
+	background: url(../images/dataAnalysis/icon8.png) no-repeat;
+	background-size: 32px 32px;
+	position: absolute;
+	bottom: 70px;
+	left: 55px;
+}
+
+.row2 .formlist .form-item-wrapper .bg9 {
+	height: 35px;
+	width: 35px;
+	background: url(../images/dataAnalysis/icon9.png) no-repeat;
+	background-size: 32px 32px;
+	position: absolute;
+	bottom: 70px;
+	left: 55px;
+}
+
+.row2 .formlist .form-item-wrapper .bg10 {
+	height: 35px;
+	width: 35px;
+	background: url(../images/dataAnalysis/icon10.png) no-repeat;
+	background-size: 32px 32px;
+	position: absolute;
+	bottom: 70px;
+	left: 55px;
+}
+
+.row2 .formlist .form-item-wrapper .form-data .count {
+	font-size: 24px;
+	margin-right: 7px;
+	vertical-align: bottom;
+}
+
+.row2 .formlist .form-item-wrapper .form-data .text {
+	line-height: 28px;
+	vertical-align: bottom;
+}

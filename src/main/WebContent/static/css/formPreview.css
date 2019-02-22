@@ -1,0 +1,341 @@
+@charset "UTF-8";
+
+.leftcontent {
+	border: 1px solid #D9DFE4;
+	border-raduis: 3px;
+}
+
+.leftcontentInner {
+	padding-left: 60px;
+}
+/*右边编辑框 固定布局*/
+.rightcontent {
+	height: 300px;
+	position: fixed;
+	top: 60px;
+	right: 0px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.rightcontentinner {
+	border: 1px solid #D9DFE4;
+	height: 100%;
+	border-radius: 3px;
+}
+
+.rightHead {
+	border: 1px solid #2A94DE;
+	border-radius: 3px;
+	height: 25px;
+}
+
+.rightHead sapn:hover {
+	cursor: pointer;
+}
+
+.span1, .span2 {
+	width: 50%;
+	line-height: 25px;
+	height: 25px;
+}
+
+.itemmargintop {
+	width: 100%;
+	height: 23px;
+	margin-top: 10px;
+}
+
+.itemr, .iteml {
+	display: block-inline;
+	width: 100px;
+	height: 22px;
+	border: 1px solid #D9DFE4;
+	border-radius: 2px;
+	padding-left: 6px;
+	line-height: 22px;
+}
+
+.iteml:hover, .itemr:hover {
+	cursor: pointer;
+}
+
+.iteml {
+	margin-left: 16px;
+}
+
+.itemr {
+	margin-right: 16px;
+}
+
+/*悬浮编辑字段样式*/
+.addDiv:hover {
+	cursor: pointer;
+}
+
+.itemEditHead {
+	width: 100%;
+	height: 25px;
+	background-color: #F5F1F1;
+	padding-left: 10px;
+	margin-top: 10px;
+}
+
+.itemEditHead h4 {
+	line-height: 25px;
+}
+
+.itemEditContent {
+	padding-top: 16px;
+	padding-left: 10px;
+	padding-right: 6px;
+}
+
+.itemEditContentInput {
+	width: 100%;
+	border-raduis: 3px;
+	padding-left: 6px;
+}
+
+.must {
+	font-size: 20px;
+	color: red;
+}
+
+.itemEditContentlitleInputR, .itemEditContentlitleInputC,
+	.itemEditContentlitleInputS {
+	margin-top: 6px;
+}
+
+select {
+	height: 30px;
+	width: 180px;
+}
+
+.previewFormButton {
+	margin: 15px 0 0 65px;
+}
+
+.previewFormButton button {
+	margin-right: 25px;
+}
+
+/*  表单预览B  */
+body {
+	background-color: #F6F6F6;
+}
+
+.container {
+	width: 100%;
+	padding: 40px 0px 55px 290px;
+	background-color: #F6F6F6;
+	position: relative;
+}
+.form-group {
+    width: 100%;
+}
+/*电脑B*/
+.container .computer .form_tilte {
+	height: 45px;
+	width: 700px;
+	text-align: center;
+	padding: 10px;
+	background-color: #0996F8;
+	color: #FFFFFF;
+}
+
+.container .computer {
+	width: 700px;
+	background-color: #FFFFFF;
+}
+
+.container .computer .form_describ {
+	width: 700px;
+	padding: 25px 20px 0px 20px;
+	border-bottom: 1px solid #C3C9D0;
+}
+
+.container .computer .form_describ h4 {
+	text-align: center;
+	color: #3180B5;
+}
+
+.container .computer .form_describ span {
+	display: inline-block;
+	height: 78%;
+	width: 100%;
+	color: #494A4B;
+	font-size: 13px;
+	padding: 2px 0px 0px 0px;
+}
+
+.container  .computer label {
+	font-weight: normal;
+	margin-left: 0px;
+}
+
+.container  .computer input {
+	margin-right: 10px;
+}
+
+.container .computer .col-md-9 {
+	width: 700px;
+	border: 1px solid #FFFFFF;
+	border-bottom: 1px solid #C3C9D0;
+	padding: 30px 30px 30px 10px;
+}
+
+.container .computer .Bottom {
+	height: 100px;
+	width: 700px;
+	border-top: 1px sloid #C3C9D0;
+}
+
+.container .computer .Bottom .submit {
+	width: 100px;
+	margin: 20px 0px 0px 50px;
+	background-color: #0996F8;
+	border: none;
+	color:white;
+}
+/*电脑B*/
+
+/*手机B*/
+.container .mobileQhone {
+	visibility: hidden;
+	height: 499px;
+	width: 281px;
+	border: 1px solid #1F2122;
+	background-color: #FFFFFF;
+	overflow-y: auto;
+	overflow-x: hidden;
+	position: fixed;
+	left: 538px;
+	top: 75px
+}
+
+.container .mobileQhone_bg {
+	visibility: hidden;
+	height: 660px;
+	width: 350px;
+	position: fixed;
+	left: 503px;
+	top: 0px;
+	background: url("../images/iphone6.png") no-repeat;
+	background-size: 350px 667px;
+}
+
+.container  .mobileQhone .form_tilte {
+	width: 100%;
+	text-align: center;
+	padding: 5px 7px 5px 7px;
+	font-size: 13px;
+	background-color: #0996F8;
+	color: #FFFFFF;
+}
+
+.container  .mobileQhone .form_describ {
+	width: 100%;
+	padding: 5px 10px 0px 10px;
+	border-bottom: 1px solid #C3C9D0;
+}
+
+.container  .mobileQhone .form_describ h5 {
+	text-align: center;
+	color: #3180B5;
+}
+
+.container  .mobileQhone .form_describ span {
+	display: inline-block;
+	height: 78%;
+	width: 100%;
+	color: #494A4B;
+	font-size: 11px;
+	padding: 0px 0px 0px 0px;
+}
+
+.container  .mobileQhone .col-md-9 {
+	width: 120%;
+	border: 1px solid #FFFFFF;
+	border-bottom: 1px solid #C3C9D0;
+	padding: 0px 35px 15px 0px;
+}
+
+.container  .mobileQhone .form-group {
+	margin-bottom: 0px;
+}
+
+.container  .mobileQhone .form-group select {
+	height: 20px;
+	font-size: 11px;
+}
+
+.container .mobileQhone .form-group .form-control {
+	height: 20px;
+	padding: 0px 0px 0px 0px;
+	font-size: 11px;
+}
+
+.container  .mobileQhone .form-group  .must {
+	font-size: 11px;
+}
+
+.container  .mobileQhone label {
+	font-weight: normal;
+	font-size: 11px;
+	margin-left: 0px;
+}
+
+.container  .mobileQhone input {
+	margin-right: 5px;
+}
+.form-group> input{
+  float:left;
+}
+.form-group .otherSpan :first-child
+{
+  float:left;
+}
+.container  .mobileQhone .Bottom {
+	height: 100px;
+	width: 100% px;
+	border-top: 1px sloid #C3C9D0;
+}
+
+.container  .mobileQhone .Bottom .submit {
+	width: 100% px;
+	margin: 20px 0px 0px 50px;
+	background-color: #0996F8;
+	border: none;
+}
+/*手机E*/
+
+/*按钮B*/
+.container .button_container {
+	width: 110px;
+	height: 165px;
+	color: #FFFFFF;
+	font-size: 17px;
+	position: fixed;
+	left: 1160px;
+	top: 130px
+}
+
+.container .button_container input {
+	border: 1px solid #0996F8;
+	background-color: #FFFFFF;
+	color: #0996F8;
+	width: 110px;
+	height: 45px;
+	margin-bottom: 15px;
+	border-radius: 4px;
+	
+}
+.container .button_container input:hover {
+	background-color: #0996F8;
+	color: #FFFFFF;
+	
+}
+/*按钮E*/
+/*  表单预览E  */
+

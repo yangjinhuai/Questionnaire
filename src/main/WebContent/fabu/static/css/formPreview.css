@@ -1,0 +1,119 @@
+﻿@charset "UTF-8";
+
+body
+{
+   background-color:#F6F6F6;
+}	
+
+
+
+/*手机B*/
+.mobileQhone
+{
+	height:100%;
+	width:100%;
+	max-width: 700px;
+	background-color:#FFFFFF;
+	overflow-y:auto;
+	overflow-x:hidden;
+	margin: auto;
+}
+.mobileQhone_bg
+{
+ 
+  height:660px;
+  width: 350px;
+  position: fixed;
+  left: 503px;
+  top: 0px;
+  background:url("../images/iphone6.png") no-repeat;
+  background-size:350px 667px;
+}
+
+.mobileQhone .form_tilte
+{
+    width:100%;
+    text-align:center;
+    padding:5px 7px 5px 7px;
+    font-size: 15px;
+    background-color:#0996F8;
+    color:#FFFFFF;
+}
+.mobileQhone .form_describ
+{
+    width:100%;
+    padding:5px 10px 0px 10px;
+    border-bottom:1px solid #C3C9D0;
+}
+.mobileQhone .form_describ h5
+{
+    text-align:center;
+    color:#3180B5;
+}
+.mobileQhone .form_describ span
+{
+    display:inline-block;
+    height:78%;
+    width:100%;
+    color:#494A4B;
+    font-size: 16px;
+    padding: 0px 10px 0px 8px;
+}
+
+.mobileQhone .col-md-9
+{
+  width: 110%;
+  padding: 0px 35px 15px 0px;
+}
+.mobileQhone .form-group {
+  clear:both;    width: 86%;
+      margin-bottom: 15px;
+      position: relative;
+}
+.mobileQhone .form-group select {
+    height: 30px;
+    font-size: 15px;
+}
+.mobileQhone .form-group .form-control {
+    height: 30px;
+    padding: 0px 0px 0px 0px;
+    font-size: 15px;
+}
+
+.mobileQhone .form-group  .must {
+    font-size: 11px;color:red;
+}
+.mobileQhone label {
+   /* pointer-events: none; */
+    font-weight: normal;
+    font-size: 17px;
+    margin-left:0px;
+}
+.mobileQhone input{
+    margin-right:5px;}
+.mobileQhone .form-group> input{
+  float:left;
+}
+.mobileQhone .form-group .otherSpan :first-child
+{
+  float:left;
+}
+.mobileQhone .Bottom
+{
+   height:100px;
+   width:100%;
+   border-top :1px solid #C3C9D0;
+}
+.mobileQhone .Bottom .submit
+{
+    width: 15%;
+    margin:20px 0px 0px 50px;
+    background-color:#0996F8;
+    border:none;
+    color:white;
+}
+/*手机E*/
+
+
+
+

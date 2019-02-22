@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fengyukeji.questionnaire.dao.QuetionnaireMapper">
+  <resultMap id="BaseResultMap" type="com.fengyukeji.questionnaire.bean.Quetionnaire">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="ques_num" jdbcType="INTEGER" property="quesNum" />
+    <result column="ques_statu" jdbcType="INTEGER" property="quesStatu" />
+    <result column="colle_statu" jdbcType="INTEGER" property="colleStatu" />
+    <result column="fabu_address" jdbcType="VARCHAR" property="fabuAddress" />
+    <result column="comment" jdbcType="VARCHAR" property="comment" />
+    <result column="ques_date" jdbcType="VARCHAR" property="quesDate" />
+    <result column="confirm_type" jdbcType="INTEGER" property="confirmType" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.fengyukeji.questionnaire.bean.Quetionnaire">
+    <result column="ques_html" jdbcType="LONGVARCHAR" property="quesHtml" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, name, ques_num, ques_statu, colle_statu, fabu_address, comment, ques_date, confirm_type
+  </sql>
+  <sql id="Blob_Column_List">
+    ques_html
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.fengyukeji.questionnaire.bean.QuetionnaireExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from que_questionnaire
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.fengyukeji.questionnaire.bean.QuetionnaireExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from que_questionnaire
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from que_questionnaire
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from que_questionnaire
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.fengyukeji.questionnaire.bean.QuetionnaireExample">
+    delete from que_questionnaire
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.fengyukeji.questionnaire.bean.Quetionnaire" keyProperty="id">
+  	  <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+          SELECT LAST_INSERT_ID()
+      </selectKey>
+    insert into que_questionnaire (id, name, ques_num, 
+      ques_statu, colle_statu, fabu_address, 
+      comment, ques_date, confirm_type, 
+      ques_html)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{quesNum,jdbcType=INTEGER}, 
+      #{quesStatu,jdbcType=INTEGER}, #{colleStatu,jdbcType=INTEGER}, #{fabuAddress,jdbcType=VARCHAR}, 
+      #{comment,jdbcType=VARCHAR}, #{quesDate,jdbcType=VARCHAR}, #{confirmType,jdbcType=INTEGER}, 
+      #{quesHtml,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.fengyukeji.questionnaire.bean.Quetionnaire" keyProperty="id">
+  	  <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+          SELECT LAST_INSERT_ID()
+      </selectKey>
+    insert into que_questionnaire
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="quesNum != null">
+        ques_num,
+      </if>
+      <if test="quesStatu != null">
+        ques_statu,
+      </if>
+      <if test="colleStatu != null">
+        colle_statu,
+      </if>
+      <if test="fabuAddress != null">
+        fabu_address,
+      </if>
+      <if test="comment != null">
+        comment,
+      </if>
+      <if test="quesDate != null">
+        ques_date,
+      </if>
+      <if test="confirmType != null">
+        confirm_type,
+      </if>
+      <if test="quesHtml != null">
+        ques_html,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="quesNum != null">
+        #{quesNum,jdbcType=INTEGER},
+      </if>
+      <if test="quesStatu != null">
+        #{quesStatu,jdbcType=INTEGER},
+      </if>
+      <if test="colleStatu != null">
+        #{colleStatu,jdbcType=INTEGER},
+      </if>
+      <if test="fabuAddress != null">
+        #{fabuAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="comment != null">
+        #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="quesDate != null">
+        #{quesDate,jdbcType=VARCHAR},
+      </if>
+      <if test="confirmType != null">
+        #{confirmType,jdbcType=INTEGER},
+      </if>
+      <if test="quesHtml != null">
+        #{quesHtml,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.fengyukeji.questionnaire.bean.QuetionnaireExample" resultType="java.lang.Long">
+    select count(*) from que_questionnaire
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update que_questionnaire
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.quesNum != null">
+        ques_num = #{record.quesNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.quesStatu != null">
+        ques_statu = #{record.quesStatu,jdbcType=INTEGER},
+      </if>
+      <if test="record.colleStatu != null">
+        colle_statu = #{record.colleStatu,jdbcType=INTEGER},
+      </if>
+      <if test="record.fabuAddress != null">
+        fabu_address = #{record.fabuAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.comment != null">
+        comment = #{record.comment,jdbcType=VARCHAR},
+      </if>
+      <if test="record.quesDate != null">
+        ques_date = #{record.quesDate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.confirmType != null">
+        confirm_type = #{record.confirmType,jdbcType=INTEGER},
+      </if>
+      <if test="record.quesHtml != null">
+        ques_html = #{record.quesHtml,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update que_questionnaire
+    set id = #{record.id,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      ques_num = #{record.quesNum,jdbcType=INTEGER},
+      ques_statu = #{record.quesStatu,jdbcType=INTEGER},
+      colle_statu = #{record.colleStatu,jdbcType=INTEGER},
+      fabu_address = #{record.fabuAddress,jdbcType=VARCHAR},
+      comment = #{record.comment,jdbcType=VARCHAR},
+      ques_date = #{record.quesDate,jdbcType=VARCHAR},
+      confirm_type = #{record.confirmType,jdbcType=INTEGER},
+      ques_html = #{record.quesHtml,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update que_questionnaire
+    set id = #{record.id,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      ques_num = #{record.quesNum,jdbcType=INTEGER},
+      ques_statu = #{record.quesStatu,jdbcType=INTEGER},
+      colle_statu = #{record.colleStatu,jdbcType=INTEGER},
+      fabu_address = #{record.fabuAddress,jdbcType=VARCHAR},
+      comment = #{record.comment,jdbcType=VARCHAR},
+      ques_date = #{record.quesDate,jdbcType=VARCHAR},
+      confirm_type = #{record.confirmType,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.fengyukeji.questionnaire.bean.Quetionnaire">
+    update que_questionnaire
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="quesNum != null">
+        ques_num = #{quesNum,jdbcType=INTEGER},
+      </if>
+      <if test="quesStatu != null">
+        ques_statu = #{quesStatu,jdbcType=INTEGER},
+      </if>
+      <if test="colleStatu != null">
+        colle_statu = #{colleStatu,jdbcType=INTEGER},
+      </if>
+      <if test="fabuAddress != null">
+        fabu_address = #{fabuAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="comment != null">
+        comment = #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="quesDate != null">
+        ques_date = #{quesDate,jdbcType=VARCHAR},
+      </if>
+      <if test="confirmType != null">
+        confirm_type = #{confirmType,jdbcType=INTEGER},
+      </if>
+      <if test="quesHtml != null">
+        ques_html = #{quesHtml,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.fengyukeji.questionnaire.bean.Quetionnaire">
+    update que_questionnaire
+    set name = #{name,jdbcType=VARCHAR},
+      ques_num = #{quesNum,jdbcType=INTEGER},
+      ques_statu = #{quesStatu,jdbcType=INTEGER},
+      colle_statu = #{colleStatu,jdbcType=INTEGER},
+      fabu_address = #{fabuAddress,jdbcType=VARCHAR},
+      comment = #{comment,jdbcType=VARCHAR},
+      ques_date = #{quesDate,jdbcType=VARCHAR},
+      confirm_type = #{confirmType,jdbcType=INTEGER},
+      ques_html = #{quesHtml,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.fengyukeji.questionnaire.bean.Quetionnaire">
+    update que_questionnaire
+    set name = #{name,jdbcType=VARCHAR},
+      ques_num = #{quesNum,jdbcType=INTEGER},
+      ques_statu = #{quesStatu,jdbcType=INTEGER},
+      colle_statu = #{colleStatu,jdbcType=INTEGER},
+      fabu_address = #{fabuAddress,jdbcType=VARCHAR},
+      comment = #{comment,jdbcType=VARCHAR},
+      ques_date = #{quesDate,jdbcType=VARCHAR},
+      confirm_type = #{confirmType,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

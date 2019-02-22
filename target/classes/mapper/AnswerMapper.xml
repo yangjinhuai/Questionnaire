@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fengyukeji.questionnaire.dao.AnswerMapper">
+  <resultMap id="BaseResultMap" type="com.fengyukeji.questionnaire.bean.Answer">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="question" jdbcType="VARCHAR" property="question" />
+    <result column="answer" jdbcType="VARCHAR" property="answer" />
+    <result column="answer_main_id" jdbcType="INTEGER" property="answerMainId" />
+    <result column="fk_questionnaire_id" jdbcType="INTEGER" property="fkQuestionnaireId" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, question, answer, answer_main_id, fk_questionnaire_id
+  </sql>
+  <select id="selectByExample" parameterType="com.fengyukeji.questionnaire.bean.AnswerExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from que_answer
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from que_answer
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from que_answer
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.fengyukeji.questionnaire.bean.AnswerExample">
+    delete from que_answer
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.fengyukeji.questionnaire.bean.Answer">
+    insert into que_answer (id, question, answer, 
+      answer_main_id, fk_questionnaire_id)
+    values (#{id,jdbcType=INTEGER}, #{question,jdbcType=VARCHAR}, #{answer,jdbcType=VARCHAR}, 
+      #{answerMainId,jdbcType=INTEGER}, #{fkQuestionnaireId,jdbcType=INTEGER})
+  </insert>
+  
+  <!-- 批量插入 insertBatch -->
+  
+  <insert id="insertBatch" parameterType="java.util.List">
+    insert into que_answer (question, answer, 
+      answer_main_id, fk_questionnaire_id)
+       values
+       <foreach collection="list" item="item" index="index" separator="," >  
+        (#{item.question,jdbcType=VARCHAR},#{item.answer,jdbcType=VARCHAR},#{item.answerMainId,jdbcType=INTEGER},#{item.fkQuestionnaireId,jdbcType=INTEGER})  
+       </foreach>
+  </insert>
+  
+  <insert id="insertSelective" parameterType="com.fengyukeji.questionnaire.bean.Answer">
+    insert into que_answer
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="question != null">
+        question,
+      </if>
+      <if test="answer != null">
+        answer,
+      </if>
+      <if test="answerMainId != null">
+        answer_main_id,
+      </if>
+      <if test="fkQuestionnaireId != null">
+        fk_questionnaire_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="question != null">
+        #{question,jdbcType=VARCHAR},
+      </if>
+      <if test="answer != null">
+        #{answer,jdbcType=VARCHAR},
+      </if>
+      <if test="answerMainId != null">
+        #{answerMainId,jdbcType=INTEGER},
+      </if>
+      <if test="fkQuestionnaireId != null">
+        #{fkQuestionnaireId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.fengyukeji.questionnaire.bean.AnswerExample" resultType="java.lang.Long">
+    select count(*) from que_answer
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update que_answer
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.question != null">
+        question = #{record.question,jdbcType=VARCHAR},
+      </if>
+      <if test="record.answer != null">
+        answer = #{record.answer,jdbcType=VARCHAR},
+      </if>
+      <if test="record.answerMainId != null">
+        answer_main_id = #{record.answerMainId,jdbcType=INTEGER},
+      </if>
+      <if test="record.fkQuestionnaireId != null">
+        fk_questionnaire_id = #{record.fkQuestionnaireId,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update que_answer
+    set id = #{record.id,jdbcType=INTEGER},
+      question = #{record.question,jdbcType=VARCHAR},
+      answer = #{record.answer,jdbcType=VARCHAR},
+      answer_main_id = #{record.answerMainId,jdbcType=INTEGER},
+      fk_questionnaire_id = #{record.fkQuestionnaireId,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.fengyukeji.questionnaire.bean.Answer">
+    update que_answer
+    <set>
+      <if test="question != null">
+        question = #{question,jdbcType=VARCHAR},
+      </if>
+      <if test="answer != null">
+        answer = #{answer,jdbcType=VARCHAR},
+      </if>
+      <if test="answerMainId != null">
+        answer_main_id = #{answerMainId,jdbcType=INTEGER},
+      </if>
+      <if test="fkQuestionnaireId != null">
+        fk_questionnaire_id = #{fkQuestionnaireId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.fengyukeji.questionnaire.bean.Answer">
+    update que_answer
+    set question = #{question,jdbcType=VARCHAR},
+      answer = #{answer,jdbcType=VARCHAR},
+      answer_main_id = #{answerMainId,jdbcType=INTEGER},
+      fk_questionnaire_id = #{fkQuestionnaireId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

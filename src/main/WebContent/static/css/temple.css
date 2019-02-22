@@ -1,0 +1,220 @@
+@CHARSET "UTF-8";
+
+.center {
+	width: 1000px;
+	margin: 0 auto;
+}
+/*顶部B*/
+.top {
+	height: 47px;
+	background-color: #8AA7E3;
+	color: #fff;
+}
+
+.top .top_c {
+	height: 47px;
+	line-height: 47px;
+}
+/*顶部E*/
+
+/*logoB*/
+.logo {
+	height: 90px;
+	background-color: #E47718;
+}
+
+.logo .l_c {
+	height: 90px;
+}
+
+.logo .l_left h1 a {
+	display: inline-block;
+	margin-top: 10px;
+	width: 64px;
+	height: 64px;
+	background: url(../images/logo.png);
+	text-indent: -9999em;
+}
+
+.logo .l_center {
+	width: 296px;
+	height: 28px;
+	background-color: #fff;
+	padding: 1px;
+	margin-left: 70px;
+	margin-top: 34px;
+	border-radius: 5px;
+}
+
+.logo .l_center .txt {
+	width: 234px;
+	height: 28px;
+	outline: none;
+}
+
+.logo .l_center .btn {
+	width: 60px;
+	height: 28px;
+	background-color: #E47718;
+	color: #fff;
+	border-radius: 0px 5px 5px 0px;
+}
+
+.logo .l_right {
+	margin-top: 30px;
+}
+
+.logo .l_right li {
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	margin-left: 20px;
+}
+
+.logo .l_right a {
+	color: #fff;
+}
+
+.logo .l_right input {
+	width: 56px;
+	height: 30px;
+	font-size: 14px;
+}
+
+.logo .l_right li b {
+	display: inline-block;;
+	width: 24px;
+	height: 20px;
+	background-color: blue;
+	background: url(../images/sprite.png);
+	vertical-align: middle;
+}
+
+.logo .l_right .sina {
+	background-position: 0 -26px;
+}
+/*logoE*/
+
+/*内容B*/
+.main {
+	height: 800px;
+}
+
+.main .m_left {
+	margin-top: 150px;
+}
+
+.main .m_right {
+	width: 450px;
+	height: 600px;
+	background-color: #fff;
+	margin-top: 80px;
+	padding: 16px;
+}
+
+.main .m_right h2 {
+	font: normal 400 30px "微软雅黑";
+	height: 100px;
+	line-height: 100px;
+	padding-left: 25px;
+}
+
+.main .m_right .uName-pwd input {
+	width: 397px;
+	height: 58px;
+	border: 1px solid #D8D8D8;
+	font-size: 24px;
+	background: url(../images/sprite.png) no-repeat;
+	padding-left: 50px;
+}
+
+.main .m_right .uName-pwd .txt {
+	background-position: -2px -355px;
+}
+
+.main .m_right .uName-pwd .btn {
+	margin-top: 34px;
+	background-position: 0 -407px;
+}
+
+.main .m_right .remember {
+	height: 100px;
+	font: normal normal 24px/100px "微软雅黑";
+}
+
+.main .m_right .remember input {
+	width: 24px;
+	height: 24px;
+	vertical-align: middle;
+}
+
+.main .m_right .loginBtn {
+	width: 450px;
+	height: 60px;
+	background-color: #8ACDDD;
+	font-size: 24px;
+	color: #fff;
+}
+
+.main .m_right .other {
+	height: 130px;
+	font: normal normal 24px/130px "微软雅黑";
+}
+
+.main .m_right .login_type li {
+	font-size: 14px;
+	height: 20px;
+	background: url(../images/sprite.png) no-repeat;
+	line-height: 20px;
+	padding-left: 24px;
+}
+
+.main .m_right .login_type .sina {
+	background-position: 0 -26px;
+}
+
+.main .m_right .login_type .email {
+	background-position: 0 -53px;
+}
+
+.main .m_right .login_type a {
+	color: #666;
+}
+
+.main .login_type .l_t_c {
+	margin-left: 120px;
+}
+/*内容E*/
+
+/*底部B*/
+.foot {
+	height: 150px;
+	padding: 10px;
+	background-color: #8AA7E3;
+}
+
+.foot .f_border {
+	height: 100px;
+}
+
+.foot .f_left {
+	margin-top: 55px;
+	color: #fff;
+}
+
+.foot .f_left li {
+	height: 33px;
+	line-height: 33px;
+}
+
+.foot .f_right {
+	margin-top: 30px;
+}
+
+.foot .f_right li {
+	float: left;
+	width: 105px;
+	height: 100px;
+	margin-left: 20px;
+}
+/*底部E*/
